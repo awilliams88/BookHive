@@ -1,5 +1,5 @@
 {
-  "originHash" : "00561d1420bb8a3330fe67a83f76764f654685536ebedc05ed2adfe17766f535",
+  "originHash" : "c1c5bca997d223a3886a8908be70412f7977440d4eaad3472e08a19f4907dd4a",
   "pins" : [
     {
       "identity" : "collectionconcurrencykit",
@@ -40,10 +40,10 @@
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-syntax.git",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
       "state" : {
-        "revision" : "2bc86522d115234d1f588efe2bcb4ce4be8f8b82",
-        "version" : "510.0.3"
+        "revision" : "82a453c2dfa335c7e778695762438dfe72b328d2",
+        "version" : "600.0.0-prerelease-2024-07-24"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat",
       "state" : {
-        "revision" : "a5e01f0f1f9eb7c7f676f6b41841ee75529be615",
-        "version" : "0.51.5"
+        "revision" : "d6309f7440889427426143b4a0b100b959d3f3e6",
+        "version" : "0.54.3"
       }
     },
     {
@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/SwiftLint",
       "state" : {
-        "revision" : "b515723b16eba33f15c4677ee65f3fef2ce8c255",
-        "version" : "0.55.1"
+        "revision" : "586dd54db496cbcc03c1aaddb3078bab19de5739",
+        "version" : "0.56.1"
       }
     },
     {
