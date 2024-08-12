@@ -1,5 +1,4 @@
 {
-  "originHash" : "7be6bd4a3d17e4cf1df705fb77c3948fac7e98a09e8437e0fdb7154f81454fc0",
   "pins" : [
     {
       "identity" : "collectionconcurrencykit",
@@ -26,6 +25,15 @@
       "state" : {
         "revision" : "678d442c6f7828def400a70ae15968aef67ef52d",
         "version" : "1.8.3"
+      }
+    },
+    {
+      "identity" : "resolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Resolver",
+      "state" : {
+        "revision" : "47602af1ac8d7952299fbd0bda3cfbd12cf3a8ca",
+        "version" : "1.5.1"
       }
     },
     {
@@ -200,5 +208,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
