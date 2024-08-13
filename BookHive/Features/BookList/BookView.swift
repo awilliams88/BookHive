@@ -80,7 +80,7 @@ struct BookView: View {
   }
 
   var publishedDate: String {
-    guard let date = isoDateFormatter.date(from: book.publicationDate) else { return "None" }
+    guard let date = isoDateFormatter.date(from: book.publicationDate) else { return "" }
     return dateFormatter.string(from: date)
   }
 

@@ -25,6 +25,9 @@ struct BookListView: View {
       .sheet(item: $store.scope(state: \.addBookView, action: \.addBookView)) {
         AddBookView(store: $0)
       }
+      .sheet(item: $store.scope(state: \.bookDetailView, action: \.bookDetailView)) {
+        BookDetailView(store: $0)
+      }
     }
   }
 
@@ -44,6 +47,7 @@ struct BookListView: View {
       .listRowSeparator(.hidden)
       .listRowInsets(.init(.zero))
       .listRowBackground(Color.clear)
+      .onTapGesture { store.send(.showBookDetail(book)) }
     }
     .listStyle(.plain)
     .background(Color.clear)

@@ -32,7 +32,9 @@
 		A197E8A22C6B828900E4BCFB /* AddBookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197E8A12C6B828900E4BCFB /* AddBookStore.swift */; };
 		A197E8A42C6B840A00E4BCFB /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197E8A32C6B840A00E4BCFB /* AddBookView.swift */; };
 		A197E8A62C6BCA2100E4BCFB /* BookStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197E8A52C6BCA2100E4BCFB /* BookStoreTests.swift */; };
+		A1D234CE2C6BF2E800B35B4E /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D234CD2C6BF2E800B35B4E /* BookDetailView.swift */; };
 		A1DB979D2C6BE2ED00D0412A /* AddBookStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DB979C2C6BE2ED00D0412A /* AddBookStoreTests.swift */; };
+		A1DB979F2C6BF0EA00D0412A /* BookDetailStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DB979E2C6BF0EA00D0412A /* BookDetailStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +79,9 @@
 		A197E8A12C6B828900E4BCFB /* AddBookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookStore.swift; sourceTree = "<group>"; };
 		A197E8A32C6B840A00E4BCFB /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		A197E8A52C6BCA2100E4BCFB /* BookStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreTests.swift; sourceTree = "<group>"; };
+		A1D234CD2C6BF2E800B35B4E /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		A1DB979C2C6BE2ED00D0412A /* AddBookStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookStoreTests.swift; sourceTree = "<group>"; };
+		A1DB979E2C6BF0EA00D0412A /* BookDetailStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,8 @@
 		A167C00C2C6A5EB000892FBE /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A1DB979E2C6BF0EA00D0412A /* BookDetailStore.swift */,
+				A1D234CD2C6BF2E800B35B4E /* BookDetailView.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -423,12 +429,14 @@
 				A18732222C6B571B00653809 /* BookView.swift in Sources */,
 				A167C0092C6A5E8900892FBE /* ApiError.swift in Sources */,
 				A167BFFE2C6A5C8600892FBE /* BookServiceProtocol.swift in Sources */,
+				A1D234CE2C6BF2E800B35B4E /* BookDetailView.swift in Sources */,
 				A187321B2C6B4EA300653809 /* Register.swift in Sources */,
 				A167BFFC2C6A5C7B00892FBE /* BookService.swift in Sources */,
 				A167C0122C6B0DBA00892FBE /* AppDelegate.swift in Sources */,
 				A167C0102C6B096A00892FBE /* Constants.swift in Sources */,
 				A167C0142C6B2A8C00892FBE /* BookError.swift in Sources */,
 				A167C0192C6B2D9D00892FBE /* BooksManagerMock.swift in Sources */,
+				A1DB979F2C6BF0EA00D0412A /* BookDetailStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

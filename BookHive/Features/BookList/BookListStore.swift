@@ -17,6 +17,7 @@ struct BookListStore {
     var books = [Book]()
     var favorites = [Int]()
     @Presents var addBookView: AddBookStore.State?
+    @Presents var bookDetailView: BookDetailStore.State?
   }
 
   enum Action: BindableAction {
@@ -25,8 +26,10 @@ struct BookListStore {
     case addBooks
     case addFavorite(Book)
     case removeFavorite(Book)
+    case showBookDetail(Book)
     case binding(BindingAction<State>)
     case addBookView(PresentationAction<AddBookStore.Action>)
+    case bookDetailView(PresentationAction<BookDetailStore.Action>)
   }
 
   var body: some Reducer<State, Action> {
@@ -80,12 +83,19 @@ struct BookListStore {
         state.favorites.removeAll { $0 == book.id }
         return .run { _ in try? await dependencies.manager.removeFavorite(book) }
 
-      case .binding, .addBookView:
+      case let .showBookDetail(book):
+        state.bookDetailView = .init(id: book.id)
+        return .none
+
+      case .binding, .addBookView, .bookDetailView:
         return .none
       }
     }
     .ifLet(\.$addBookView, action: \.addBookView) {
       AddBookStore()
+    }
+    .ifLet(\.$bookDetailView, action: \.bookDetailView) {
+      BookDetailStore()
     }
   }
 }
