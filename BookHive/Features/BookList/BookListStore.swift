@@ -39,7 +39,7 @@ struct BookListStore {
       case .loadBooks:
         return .run { send in
           do {
-            async let _ = send(.loadFavorites)
+            await send(.loadFavorites)
             let books = try await dependencies.manager.getAllBooks()
             await send(.binding(.set(\.books, books)))
           } catch {
@@ -73,26 +73,12 @@ struct BookListStore {
         }
 
       case let .addFavorite(book):
-        return .run { send in
-          do {
-            try await dependencies.manager.addFavorite(book)
-            let favorites = try await dependencies.manager.getAllFavoriteBooks()
-            await send(.binding(.set(\.favorites, favorites)))
-          } catch {
-            print(error)
-          }
-        }
+        state.favorites.append(book.id)
+        return .run { _ in try? await dependencies.manager.addFavorite(book) }
 
       case let .removeFavorite(book):
-        return .run { send in
-          do {
-            try await dependencies.manager.removeFavorite(book)
-            let favorites = try await dependencies.manager.getAllFavoriteBooks()
-            await send(.binding(.set(\.favorites, favorites)))
-          } catch {
-            print(error)
-          }
-        }
+        state.favorites.removeAll { $0 == book.id }
+        return .run { _ in try? await dependencies.manager.removeFavorite(book) }
 
       case .binding, .addBookView:
         return .none

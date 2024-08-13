@@ -18,7 +18,7 @@ struct AddBookStore {
     var title = ""
     var author = ""
     var description = ""
-    var publishedDate = Date()
+    var publishedDate = Date(timeIntervalSince1970: 0)
 
     var publishedISODate: String {
       let formatter = ISO8601DateFormatter()
