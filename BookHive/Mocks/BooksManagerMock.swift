@@ -5,7 +5,7 @@
 
 import Foundation
 
-final class BooksManagerMockMock: BooksManagerProtocol {
+final class BooksManagerMock: BooksManagerProtocol {
   let bookService: BookServiceProtocol = BookServiceMock()
   func create(_ book: Book) async throws {}
   func update(_ book: Book) async throws {}

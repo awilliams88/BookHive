@@ -38,7 +38,7 @@ extension Dependencies {
   static func mock() -> Self {
     .init(
       service: BookServiceMock(),
-      manager: BooksManagerMockMock()
+      manager: BooksManagerMock()
     )
   }
 }
