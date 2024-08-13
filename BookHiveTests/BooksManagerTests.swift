@@ -72,8 +72,8 @@ final class BooksManagerTests: XCTestCase {
   func testAddFavorite() async throws {
     let remoteBook = Book.mockRemote
     try await sut.addFavorite(remoteBook)
-    let isFavorite = try await sut.isFavorite(remoteBook)
-    XCTAssert(isFavorite)
+    let favorites = try await sut.getAllFavoriteBooks()
+    XCTAssert(favorites.contains(remoteBook.id))
   }
 
   func testRemoveFavorite() async throws {
@@ -82,8 +82,8 @@ final class BooksManagerTests: XCTestCase {
     try await sut.addFavorite(localBook)
     try await sut.addFavorite(remoteBook)
     try await sut.removeFavorite(localBook)
-    let isFavorite = try await sut.isFavorite(localBook)
-    XCTAssert(isFavorite == false)
+    let favorites = try await sut.getAllFavoriteBooks()
+    XCTAssert(favorites.contains(localBook.id) == false)
   }
 }
 
