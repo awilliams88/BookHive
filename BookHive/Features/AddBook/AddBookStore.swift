@@ -51,7 +51,7 @@ struct AddBookStore {
           author: state.author, description: state.description,
           cover: "", publicationDate: state.publishedISODate
         )
-        return .send(.saveBook(book))
+        return .concatenate(.send(.saveBook(book)), .send(.dismiss))
 
       case .dismiss:
         return .run { _ in

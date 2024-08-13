@@ -66,13 +66,15 @@ struct AddBookView: View {
       Button(
         action: { store.send(.dismiss) },
         label: {
-          Text("CANCEL")
+          Text("Cancel")
             .textCase(.uppercase)
             .font(.callout.weight(.semibold))
             .foregroundColor(Color(.systemPink))
         }
       )
-    }.frame(maxWidth: .infinity, alignment: .center)
+    }
+    .buttonStyle(BorderlessButtonStyle())
+    .frame(maxWidth: .infinity, alignment: .center)
   }
 }
 
