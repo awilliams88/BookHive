@@ -14,5 +14,5 @@ protocol BooksManagerProtocol {
   func getBook(with id: Int) async throws -> Book
   func addFavorite(_ book: Book) async throws
   func removeFavorite(_ book: Book) async throws
-  func isFavorite(_ book: Book) async throws -> Bool
+  func getAllFavoriteBooks() async throws -> [Int]
 }

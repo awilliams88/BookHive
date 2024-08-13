@@ -82,7 +82,7 @@ final class BooksManagerTests: XCTestCase {
     try await sut.addFavorite(localBook)
     try await sut.addFavorite(remoteBook)
     try await sut.removeFavorite(localBook)
-    var isFavorite = try await sut.isFavorite(localBook)
+    let isFavorite = try await sut.isFavorite(localBook)
     XCTAssert(isFavorite == false)
   }
 }

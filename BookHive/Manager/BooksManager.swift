@@ -14,7 +14,7 @@ final class BooksManager: BooksManagerProtocol {
 
   func create(_ book: Book) async throws {
     var books = try await getLocalBooks()
-    books.append(book)
+    books.insert(book, at: 0)
     try await updateLocalBooks(books)
   }
 
@@ -60,9 +60,9 @@ final class BooksManager: BooksManagerProtocol {
     try await updateFavoriteBookIds(favorites)
   }
 
-  func isFavorite(_ book: Book) async throws -> Bool {
+  func getAllFavoriteBooks() async throws -> [Int] {
     let favorites = try await getFavoriteBookIds()
-    return favorites.contains(book.id)
+    return favorites
   }
 }
 
