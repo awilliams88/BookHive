@@ -12,7 +12,7 @@ struct BookHiveApp: App {
 
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      BookListView(store: BookListStore.loadStore())
     }
   }
 }
