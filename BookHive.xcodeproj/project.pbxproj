@@ -31,6 +31,7 @@
 		A18732222C6B571B00653809 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18732212C6B571B00653809 /* BookView.swift */; };
 		A197E8A22C6B828900E4BCFB /* AddBookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197E8A12C6B828900E4BCFB /* AddBookStore.swift */; };
 		A197E8A42C6B840A00E4BCFB /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197E8A32C6B840A00E4BCFB /* AddBookView.swift */; };
+		A197E8A62C6BCA2100E4BCFB /* BookStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197E8A52C6BCA2100E4BCFB /* BookStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		A18732212C6B571B00653809 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		A197E8A12C6B828900E4BCFB /* AddBookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookStore.swift; sourceTree = "<group>"; };
 		A197E8A32C6B840A00E4BCFB /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		A197E8A52C6BCA2100E4BCFB /* BookStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A167C01A2C6B2FEF00892FBE /* BooksManagerTests.swift */,
+				A197E8A52C6BCA2100E4BCFB /* BookStoreTests.swift */,
 			);
 			path = BookHiveTests;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A197E8A62C6BCA2100E4BCFB /* BookStoreTests.swift in Sources */,
 				A167C01B2C6B2FEF00892FBE /* BooksManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
