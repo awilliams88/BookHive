@@ -12,4 +12,7 @@ final class BooksManagerMockMock: BooksManagerProtocol {
   func remove(_ book: Book) async throws {}
   func getAllBooks() async throws -> [Book] { try await bookService.getAllBooks() }
   func getBook(with id: Int) async throws -> Book { try await bookService.getBook(for: id) }
+  func addFavorite(_ book: Book) async throws {}
+  func removeFavorite(_ book: Book) async throws {}
+  func isFavorite(_ book: Book) async throws -> Bool { true }
 }

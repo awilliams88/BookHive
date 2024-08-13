@@ -5,6 +5,8 @@
 
 import Foundation
 
-// swiftlint:disable force_unwrapping
+let booksDb = "books.data"
+let favoritesDb = "books_favorites.data"
+
+// swiftlint:disable:next force_unwrapping
 let baseUrl = URL(string: "https://my-json-server.typicode.com/")!
-// swiftlint:enable force_unwrapping

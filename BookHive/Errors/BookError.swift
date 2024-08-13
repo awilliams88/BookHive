@@ -7,4 +7,6 @@ import Foundation
 
 enum BookError: Error {
   case invalidBookId
+  case bookIdAlreadyFavortie
+  case bookIdAlreadyNotFavortie
 }
