@@ -12,13 +12,9 @@ final class BooksManagerTests: XCTestCase {
   let mock = BookServiceMock()
 
   override func setUpWithError() throws {
+    clearDB(booksDb)
+    clearDB(favoritesDb)
     sut = BooksManager(bookService: mock)
-
-    /// Clear books db
-    let fileUrl = try FileManager.default
-      .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-      .appendingPathComponent("books.data")
-    try? FileManager.default.removeItem(at: fileUrl)
   }
 
   override func tearDownWithError() throws {}
@@ -71,5 +67,35 @@ final class BooksManagerTests: XCTestCase {
     let books = try await sut.getAllBooks()
     XCTAssert(books.count == 2)
     XCTAssert(books.isEmpty == false)
+  }
+
+  func testAddFavorite() async throws {
+    let remoteBook = Book.mockRemote
+    try await sut.addFavorite(remoteBook)
+    let isFavorite = try await sut.isFavorite(remoteBook)
+    XCTAssert(isFavorite)
+  }
+
+  func testRemoveFavorite() async throws {
+    let localBook = Book.mockLocal
+    let remoteBook = Book.mockRemote
+    try await sut.addFavorite(localBook)
+    try await sut.addFavorite(remoteBook)
+    try await sut.removeFavorite(localBook)
+    var isFavorite = try await sut.isFavorite(localBook)
+    XCTAssert(isFavorite == false)
+  }
+}
+
+// MARK: Private Helpers
+
+private extension BooksManagerTests {
+
+  func clearDB(_ fileName: String) {
+    if let fileUrl = try? FileManager.default
+      .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+      .appendingPathComponent(fileName) {
+      try? FileManager.default.removeItem(at: fileUrl)
+    }
   }
 }
