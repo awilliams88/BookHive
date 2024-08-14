@@ -15,7 +15,8 @@ struct BookDetailStore {
   @ObservableState
   struct State: Equatable {
     let id: Int
-    var book: Book!
+    let isEditable: Bool
+    var book: Book?
   }
 
   enum Action: BindableAction {
@@ -53,18 +54,12 @@ struct BookDetailStore {
   }
 }
 
-// MARK: Load Store
+// MARK: Mock Store
 
 extension BookDetailStore {
 
-  static func loadStore(id: Int) -> StoreOf<Self> {
-    .init(initialState: State(id: id)) {
-      BookDetailStore()
-    }
-  }
-
   static func mockStore() -> StoreOf<Self> {
-    .init(initialState: State(id: 1)) {
+    .init(initialState: State(id: 1, isEditable: true)) {
       BookDetailStore()
     }
   }

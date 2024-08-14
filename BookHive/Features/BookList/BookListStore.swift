@@ -84,8 +84,11 @@ struct BookListStore {
         return .run { _ in try? await dependencies.manager.removeFavorite(book) }
 
       case let .showBookDetail(book):
-        state.bookDetailView = .init(id: book.id)
-        return .none
+        return .run { send in
+          let bookIds = try await dependencies.manager.getAllUserBookIds()
+          let bookDetailView = BookDetailStore.State(id: book.id, isEditable: bookIds.contains(book.id))
+          await send(.binding(.set(\.bookDetailView, bookDetailView)))
+        }
 
       case .binding, .addBookView, .bookDetailView:
         return .none
