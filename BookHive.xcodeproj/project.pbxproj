@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A105E4112C6CA7F800FBDCA4 /* BookDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E4102C6CA7F800FBDCA4 /* BookDetailToolBar.swift */; };
 		A1395A0A2C6A3DEF00C74352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1395A092C6A3DEF00C74352 /* Assets.xcassets */; };
 		A1395A0D2C6A3DEF00C74352 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1395A0C2C6A3DEF00C74352 /* Preview Assets.xcassets */; };
 		A167BFF92C6A5B1F00892FBE /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = A167BFF82C6A5B1F00892FBE /* Resolver */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A105E4102C6CA7F800FBDCA4 /* BookDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailToolBar.swift; sourceTree = "<group>"; };
 		A1395A022C6A3DEE00C74352 /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1395A052C6A3DEE00C74352 /* BookHiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookHiveApp.swift; path = /Volumes/Developer/BookHive/BookHive/BookHiveApp.swift; sourceTree = "<absolute>"; };
 		A1395A092C6A3DEF00C74352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				A1DB979E2C6BF0EA00D0412A /* BookDetailStore.swift */,
 				A1D234CD2C6BF2E800B35B4E /* BookDetailView.swift */,
+				A105E4102C6CA7F800FBDCA4 /* BookDetailToolBar.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				A187321F2C6B542300653809 /* BookListView.swift in Sources */,
 				A18439C12C6A47DD00E039B3 /* BookHiveApp.swift in Sources */,
 				A167C0172C6B2CFA00892FBE /* BookServiceMock.swift in Sources */,
+				A105E4112C6CA7F800FBDCA4 /* BookDetailToolBar.swift in Sources */,
 				A197E8A42C6B840A00E4BCFB /* AddBookView.swift in Sources */,
 				A167C0072C6A5E7D00892FBE /* Book.swift in Sources */,
 				A197E8A22C6B828900E4BCFB /* AddBookStore.swift in Sources */,

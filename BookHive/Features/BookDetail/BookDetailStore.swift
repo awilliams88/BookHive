@@ -21,6 +21,8 @@ struct BookDetailStore {
 
   enum Action: BindableAction {
     case loadBook
+    case editBook
+    case removeBook
     case dismiss
     case binding(BindingAction<State>)
   }
@@ -41,6 +43,12 @@ struct BookDetailStore {
             await send(.dismiss)
           }
         }
+
+      case .editBook:
+        return .none
+
+      case .removeBook:
+        return .none
 
       case .dismiss:
         return .run { _ in

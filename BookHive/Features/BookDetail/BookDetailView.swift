@@ -27,13 +27,11 @@ struct BookDetailView: View {
           .onAppear { store.send(.loadBook) }
           .navigationBarTitle("Book Info 📗")
           .toolbar {
-            ToolbarItem(
-              placement: .topBarLeading,
-              content: { Button("", systemImage: "trash") {} }
-            )
-            ToolbarItem(
-              placement: .topBarTrailing,
-              content: { Button("Edit") {} }
+            BookDetailToolBar(
+              isEditable: store.isEditable,
+              edit: { store.send(.editBook) },
+              close: { store.send(.dismiss) },
+              remove: { store.send(.removeBook) }
             )
           }
         }
