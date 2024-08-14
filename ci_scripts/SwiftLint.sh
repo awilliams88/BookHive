@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #  SwiftLint.sh
-#  Fly
+#  BookHive
 #
 #  Created by Arpit Williams on 15/05/24.
 #

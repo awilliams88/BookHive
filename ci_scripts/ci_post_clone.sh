@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #  ci_post_clone.sh
-#  Fly
+#  BookHive
 #
 #  Created by Arpit Williams on 03/07/24.
 #  
