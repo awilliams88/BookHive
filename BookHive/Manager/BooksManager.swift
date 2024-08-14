@@ -64,6 +64,10 @@ final class BooksManager: BooksManagerProtocol {
     let favorites = try await getFavoriteBookIds()
     return favorites
   }
+
+  func getAllUserBookIds() async throws -> [Int] {
+    try await getLocalBooks().map(\.id)
+  }
 }
 
 // MARK: Read/Write Books

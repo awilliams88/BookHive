@@ -85,6 +85,17 @@ final class BooksManagerTests: XCTestCase {
     let favorites = try await sut.getAllFavoriteBooks()
     XCTAssert(favorites.contains(localBook.id) == false)
   }
+
+  func testIsBookEditable() async throws {
+    let localbook = Book.mockLocal
+    try await sut.create(localbook)
+    let books = try await sut.getAllBooks()
+    let userBookIds = try await sut.getAllUserBookIds()
+    let isLocalBookEditable = userBookIds.contains(books[0].id)
+    let isRemoteBookEditable = userBookIds.contains(books[1].id)
+    XCTAssert(isLocalBookEditable)
+    XCTAssert(isRemoteBookEditable == false)
+  }
 }
 
 // MARK: Private Helpers
