@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A105E4112C6CA7F800FBDCA4 /* BookDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E4102C6CA7F800FBDCA4 /* BookDetailToolBar.swift */; };
+		A126F9812C6CBAC900DE6209 /* BookDetailStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126F9802C6CBAC900DE6209 /* BookDetailStoreTests.swift */; };
 		A1395A0A2C6A3DEF00C74352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1395A092C6A3DEF00C74352 /* Assets.xcassets */; };
 		A1395A0D2C6A3DEF00C74352 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1395A0C2C6A3DEF00C74352 /* Preview Assets.xcassets */; };
 		A167BFF92C6A5B1F00892FBE /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = A167BFF82C6A5B1F00892FBE /* Resolver */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		A105E4102C6CA7F800FBDCA4 /* BookDetailToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailToolBar.swift; sourceTree = "<group>"; };
+		A126F9802C6CBAC900DE6209 /* BookDetailStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailStoreTests.swift; sourceTree = "<group>"; };
 		A1395A022C6A3DEE00C74352 /* BookHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1395A052C6A3DEE00C74352 /* BookHiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookHiveApp.swift; path = /Volumes/Developer/BookHive/BookHive/BookHiveApp.swift; sourceTree = "<absolute>"; };
 		A1395A092C6A3DEF00C74352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				A167C01A2C6B2FEF00892FBE /* BooksManagerTests.swift */,
 				A197E8A52C6BCA2100E4BCFB /* BookStoreTests.swift */,
 				A1DB979C2C6BE2ED00D0412A /* AddBookStoreTests.swift */,
+				A126F9802C6CBAC900DE6209 /* BookDetailStoreTests.swift */,
 			);
 			path = BookHiveTests;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				A1DB979D2C6BE2ED00D0412A /* AddBookStoreTests.swift in Sources */,
 				A197E8A62C6BCA2100E4BCFB /* BookStoreTests.swift in Sources */,
 				A167C01B2C6B2FEF00892FBE /* BooksManagerTests.swift in Sources */,
+				A126F9812C6CBAC900DE6209 /* BookDetailStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
