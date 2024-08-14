@@ -36,6 +36,9 @@ struct BookDetailView: View {
           }
         }
       }
+      .sheet(item: $store.scope(state: \.addBookView, action: \.addBookView)) {
+        AddBookView(store: $0)
+      }
     }
   }
 

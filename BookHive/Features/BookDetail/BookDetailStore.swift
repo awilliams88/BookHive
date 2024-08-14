@@ -17,6 +17,13 @@ struct BookDetailStore {
     let id: Int
     let isEditable: Bool
     var book: Book?
+    @Presents var addBookView: AddBookStore.State?
+
+    var publishedISODate: Date {
+      let formatter = ISO8601DateFormatter()
+      formatter.formatOptions.insert(.withFractionalSeconds)
+      return formatter.date(from: book?.publicationDate ?? "") ?? Date()
+    }
   }
 
   enum Action: BindableAction {
@@ -26,12 +33,15 @@ struct BookDetailStore {
     case reloadBooks
     case dismiss
     case binding(BindingAction<State>)
+    case addBookView(PresentationAction<AddBookStore.Action>)
   }
 
   @Dependency(\.dismiss) var dismiss
 
   var body: some Reducer<State, Action> {
     BindingReducer()
+
+    // swiftlint:disable:next closure_body_length
     Reduce { state, action in
       switch action {
 
@@ -46,6 +56,11 @@ struct BookDetailStore {
         }
 
       case .editBook:
+        guard let book = state.book else { return .none }
+        state.addBookView = .init(
+          id: book.id, title: book.title, author: book.author,
+          description: book.description, publishedDate: state.publishedISODate
+        )
         return .none
 
       case .removeBook:
@@ -56,14 +71,28 @@ struct BookDetailStore {
           await send(.reloadBooks)
         }
 
+      case let .addBookView(.presented(.saveBook(book))):
+        return .run { send in
+          do {
+            try await dependencies.manager.update(book)
+            await send(.binding(.set(\.book, book)))
+            await send(.reloadBooks)
+          } catch {
+            print(error)
+          }
+        }
+
       case .dismiss:
         return .run { _ in
           await self.dismiss(animation: .default)
         }
 
-      case .binding, .reloadBooks:
+      case .binding, .reloadBooks, .addBookView:
         return .none
       }
+    }
+    .ifLet(\.$addBookView, action: \.addBookView) {
+      AddBookStore()
     }
   }
 }
