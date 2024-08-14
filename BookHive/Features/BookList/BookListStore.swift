@@ -90,6 +90,9 @@ struct BookListStore {
           await send(.binding(.set(\.bookDetailView, bookDetailView)))
         }
 
+      case .bookDetailView(.presented(\.reloadBooks)):
+        return .send(.loadBooks)
+
       case .binding, .addBookView, .bookDetailView:
         return .none
       }

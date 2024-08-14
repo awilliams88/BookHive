@@ -23,6 +23,7 @@ struct BookDetailStore {
     case loadBook
     case editBook
     case removeBook
+    case reloadBooks
     case dismiss
     case binding(BindingAction<State>)
   }
@@ -48,14 +49,19 @@ struct BookDetailStore {
         return .none
 
       case .removeBook:
-        return .none
+        return .run { [book = state.book] send in
+          guard let book else { return }
+          try await dependencies.manager.remove(book)
+          await send(.dismiss)
+          await send(.reloadBooks)
+        }
 
       case .dismiss:
         return .run { _ in
           await self.dismiss(animation: .default)
         }
 
-      case .binding:
+      case .binding, .reloadBooks:
         return .none
       }
     }
