@@ -18,7 +18,7 @@ struct AddBookStore {
     var title = ""
     var author = ""
     var description = ""
-    var publishedDate = Date(timeIntervalSince1970: 0)
+    var publishedDate = Date()
 
     var publishedISODate: String {
       let formatter = ISO8601DateFormatter()
@@ -65,15 +65,9 @@ struct AddBookStore {
   }
 }
 
-// MARK: Load Store
+// MARK: Mock Store
 
 extension AddBookStore {
-
-  static func loadStore(id: Int) -> StoreOf<Self> {
-    .init(initialState: State(id: id)) {
-      AddBookStore()
-    }
-  }
 
   static func mockStore() -> StoreOf<Self> {
     .init(initialState: State(id: 100)) {

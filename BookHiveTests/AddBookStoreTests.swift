@@ -18,7 +18,6 @@ final class AddBookStoreTests: XCTestCase {
     // Create Book
     await store.send(.binding(.set(\.title, "title"))) {
       $0.title = "title"
-      $0.publishedDate = Date(timeIntervalSince1970: 0)
     }
     await store.send(.binding(.set(\.author, "author"))) {
       $0.author = "author"

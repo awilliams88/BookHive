@@ -23,14 +23,6 @@ final class BookStoreTests: XCTestCase {
     }
     await store.receive(\.binding.favorites)
 
-    // Add Books
-    await store.send(.addBooks) {
-      $0.addBookView = .init(
-        id: 2,
-        publishedDate: Date(timeIntervalSince1970: 0)
-      )
-    }
-
     // Add Favorite
     await store.send(.addFavorite(.mockLocal)) {
       $0.favorites = [Book.mockLocal.id]
