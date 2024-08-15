@@ -10,8 +10,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
     // Configure URLCache
-    let memoryCapacity = 50 * 1024 * 1024 // 50 MB
-    let diskCapacity = 500 * 1024 * 1024 // 500 MB
+    let memoryCapacity = 10 * 1024 * 1024 // 10 MB
+    let diskCapacity = 50 * 1024 * 1024 // 50 MB
     let cache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity)
     URLCache.shared = cache
 
