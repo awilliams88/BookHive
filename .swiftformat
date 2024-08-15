@@ -3,7 +3,7 @@
 --exclude BuildTools
 
 # file header
---header "\n{file}\nCreated by Arpit Williams on {created}.\nCopyright (c) {year} StarKnights Technologies"
+--header "\n{file}\nCreated by Arpit Williams on {created}\n"
 
 
 # format options
